@@ -1,0 +1,84 @@
+/* Home basic */
+.home {
+  height: 100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  text-align:center;
+  background:#000;
+}
+
+.name {
+  font-size: 56px;
+  color: #0ff;
+  text-shadow: 0 0 8px rgba(0,255,255,0.12), 0 0 20px rgba(0,255,255,0.06);
+  margin-bottom: 14px;
+}
+
+/* Typing text */
+.typing-text {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 20px;
+  color: #fff;
+  min-height: 28px;   /* reserve space so layout doesn't jump */
+  margin-bottom: 18px;
+}
+
+/* blinking cursor implemented with ::after so JS doesn't need to manage it */
+.typing-text::after {
+  content: "";
+  display: inline-block;
+  width: 2px;
+  height: 1.08em;
+  background: #0ff;
+  margin-left: 8px;
+  vertical-align: -0.15em;
+  animation: blink 0.8s steps(1) infinite;
+}
+
+@keyframes blink { 50% { opacity: 0; } }
+
+/* Button */
+.btn {
+  display:inline-block;
+  padding:10px 18px;
+  border-radius:8px;
+  background: linear-gradient(90deg,#00d1ff,#7c4dff);
+  color:#000;
+  font-weight:700;
+  text-decoration:none;
+  box-shadow:0 8px 30px rgba(124,77,255,0.08);
+}
+.btn:hover { transform: translateY(-3px); transition: .18s ease; }
+
+
+/* Reset */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Arial', sans-serif; background: #000; color: #fff; line-height: 1.6; }
+
+/* Navbar */
+header { position: fixed; top: 0; width: 100%; background: rgba(0,0,0,0.8); padding: 15px 40px; z-index: 1000; }
+nav { display: flex; justify-content: space-between; align-items: center; }
+.logo { color: #0ff; font-size: 22px; font-weight: bold; }
+nav ul { list-style: none; display: flex; gap: 20px; }
+nav ul li a { color: #fff; text-decoration: none; transition: 0.3s; }
+nav ul li a:hover { color: #0ff; }
+.btn { background: #0ff; color: #000; padding: 6px 12px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: 0.3s; }
+.btn:hover { background: #fff; color: #000; }
+
+/* Sections */
+.section { min-height: 100vh; padding: 100px 40px; text-align: center; }
+.section h2 { font-size: 28px; margin-bottom: 20px; color: #0ff; }
+.highlight { color: #0ff; }
+
+/* Typing Effect */
+.typing-text { font-size: 24px; color: #0ff; margin: 20px 0; }
+
+/* Contact Form */
+form { display: flex; flex-direction: column; gap: 10px; max-width: 400px; margin: auto; }
+input, textarea { padding: 10px; border: none; border-radius: 5px; }
+button { background: #0ff; color: #000; padding: 10px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; }
+button:hover { background: #fff; color: #000; }
+
+footer { background: #111; padding: 15px; text-align: center; font-size: 14px; color: #aaa; }
